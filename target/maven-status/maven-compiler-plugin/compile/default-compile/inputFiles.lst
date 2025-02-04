@@ -1,0 +1,5 @@
+/Users/Williamhui/Documents/GitHub/email-assistant-backend/src/main/java/com/email/assistant/EmailAssistantBackendApplication.java
+/Users/Williamhui/Documents/GitHub/email-assistant-backend/src/main/java/com/email/assistant/WebClientConfig.java
+/Users/Williamhui/Documents/GitHub/email-assistant-backend/src/main/java/com/email/assistant/controller/EmailGeneratorController.java
+/Users/Williamhui/Documents/GitHub/email-assistant-backend/src/main/java/com/email/assistant/dto/request/EmailRequest.java
+/Users/Williamhui/Documents/GitHub/email-assistant-backend/src/main/java/com/email/assistant/service/EmailGeneratorService.java

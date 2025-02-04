@@ -1,0 +1,5 @@
+com/email/assistant/service/EmailGeneratorService.class
+com/email/assistant/dto/request/EmailRequest.class
+com/email/assistant/WebClientConfig.class
+com/email/assistant/controller/EmailGeneratorController.class
+com/email/assistant/EmailAssistantBackendApplication.class

@@ -1,6 +1,7 @@
 package com.email.assistant.service;
 
 import com.email.assistant.dto.request.EmailRequest;
+import com.email.assistant.exception.custom.BadRequestException;
 import com.email.assistant.exception.custom.ResourceNotFoundException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -87,6 +88,14 @@ public class EmailGeneratorService {
         // Validate input
         if (emailRequest == null || emailRequest.getEmailContent() == null || emailRequest.getEmailContent().isEmpty()) {
             throw new ResourceNotFoundException("Email Request/ Email Content Not Found.");
+        } else if (emailRequest.getMinWordLength() <= 0) {
+            throw new BadRequestException("Email Min Word should be greater than zero.");
+        } else if (emailRequest.getMaxWordLength() <= 0) {
+            throw new BadRequestException("Email Max Word should be greater than zero.");
+        } else if (emailRequest.getMinWordLength() >= emailRequest.getMaxWordLength()){
+            throw new BadRequestException("Email Min word should be smaller than Max Word.");
+        } else if (emailRequest.getTone() == null || emailRequest.getTone().isEmpty()){
+            throw new ResourceNotFoundException("Email Tone Not Found.");
         }
 
         // Build the prompt

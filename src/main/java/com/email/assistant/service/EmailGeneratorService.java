@@ -110,7 +110,14 @@ public class EmailGeneratorService {
                     .append(maxWordLength)
                     .append(" words.");
         }
-        
+
+        // Validate and add language constraint
+        String language = emailRequest.getLanguage();
+        if (!language.isEmpty()){
+            prompt.append(" Please give me the reply in ")
+                    .append(language);
+        }
+
         // Add the original email content
         prompt.append("\nOriginal email: \n").append(emailRequest.getEmailContent());
 

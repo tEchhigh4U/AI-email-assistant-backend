@@ -8,6 +8,18 @@ public class EmailRequest {
     private int minWordLength;
     private int maxWordLength;
     private String tone;
+    private String language;
+
+    public EmailRequest() {
+    }
+
+    public EmailRequest(String emailContent, int minWordLength, int maxWordLength, String tone, String language) {
+        this.emailContent = emailContent;
+        this.minWordLength = minWordLength;
+        this.maxWordLength = maxWordLength;
+        this.tone = tone;
+        this.language = language;
+    }
 
     public String getEmailContent() {
         return emailContent;
@@ -41,13 +53,11 @@ public class EmailRequest {
         this.tone = tone;
     }
 
-    public EmailRequest() {
+    public String getLanguage() {
+        return language;
     }
 
-    public EmailRequest(String emailContent, int minWordLength, int maxWordLength, String tone) {
-        this.emailContent = emailContent;
-        this.minWordLength = minWordLength;
-        this.maxWordLength = maxWordLength;
-        this.tone = tone;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

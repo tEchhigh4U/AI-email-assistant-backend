@@ -1,6 +1,7 @@
 package com.email.assistant.service;
 
 import com.email.assistant.dto.request.EmailRequest;
+import com.email.assistant.exception.custom.ResourceNotFoundException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -85,7 +86,7 @@ public class EmailGeneratorService {
     public String buildPrompt(EmailRequest emailRequest) {
         // Validate input
         if (emailRequest == null || emailRequest.getEmailContent() == null || emailRequest.getEmailContent().isEmpty()) {
-            return null;
+            throw new ResourceNotFoundException("Email Request/ Email Content Not Found.");
         }
 
         // Build the prompt
@@ -109,7 +110,7 @@ public class EmailGeneratorService {
                     .append(maxWordLength)
                     .append(" words.");
         }
-
+        
         // Add the original email content
         prompt.append("\nOriginal email: \n").append(emailRequest.getEmailContent());
 

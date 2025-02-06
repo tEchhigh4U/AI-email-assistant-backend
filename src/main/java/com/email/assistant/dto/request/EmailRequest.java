@@ -1,5 +1,8 @@
 package com.email.assistant.dto.request;
 
+import lombok.Data;
+
+@Data
 public class EmailRequest {
     private String emailContent;
     private int minWordLength;
@@ -35,6 +38,16 @@ public class EmailRequest {
     }
 
     public void setTone(String tone) {
+        this.tone = tone;
+    }
+
+    public EmailRequest() {
+    }
+
+    public EmailRequest(String emailContent, int minWordLength, int maxWordLength, String tone) {
+        this.emailContent = emailContent;
+        this.minWordLength = minWordLength;
+        this.maxWordLength = maxWordLength;
         this.tone = tone;
     }
 }

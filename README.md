@@ -1,6 +1,6 @@
 # Your Personal Email Assistant
 
-This repository contains the backend server that integrates with the **Qwen-fast API** as the LLM (Large Language Model) to generate custom email templates based on the provided request body.
+This repository contains the backend server that integrates with the **Qwen-fast API** and **DeepSeek API** as the LLM (Large Language Model) to generate custom email templates based on the provided request body.
 
 ---
 
@@ -79,3 +79,11 @@ The Qwen-fast API is a high-performance Large Language Model (LLM) designed for 
 
 ### Integration
 The backend server sends the request body to the Qwen-fast API, which processes the input and returns the generated email content. The API’s response is then formatted and sent back to the client.
+
+## 5. About DeepSeek API
+
+### Overview
+The DeepSeek API is a powerful Large Language Model (LLM) designed for advanced natural language processing tasks. While it operates at a slightly slower speed compared to Qwen-fast, it excels in generating content that better aligns with client needs, making it highly suitable for applications such as email template generation and content creation.
+
+### Integration
+The backend server sends the request body to the DeepSeek API, which processes the input and generates high-quality email content. The API’s response is then formatted and delivered back to the client, ensuring seamless integration and optimal content quality. 

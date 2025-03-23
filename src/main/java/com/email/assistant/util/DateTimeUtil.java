@@ -1,9 +1,12 @@
 package com.email.assistant.util;
 
+import org.springframework.stereotype.Component;
+
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 import java.time.ZoneId;
 
+@Component
 public class DateTimeUtil {
 
     public static String getFormattedTimestamp(){
